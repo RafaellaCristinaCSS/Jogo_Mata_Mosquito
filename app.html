@@ -16,13 +16,15 @@
                 <img id="v2" src="imagens/coracao_cheio.png">
                 <img id="v3" src="imagens/coracao_cheio.png">
             </div>
-            <div class="cronometro">Tempo Restante</div>
+            <div class="cronometro">Tempo Restante <span id="cronometro"></div>
         </div>
         <script> 
-            setInterval(function(){
-            posicaoRandomica()
+            document.getElementById('cronometro').innerHTML = tempo /* Adicionado aqui para que ele so comece a contar apos o carregamento da pagina */
+            
+            var criaMosquito = setInterval(function(){
+            posicaoRandomica() /*  Chamando a funcao para que ela seja criada apos a criação do body  */
           }, 2000)
-        </script> <!-- Chamando a funcao para que ela seja criada apos a criação do body -->
+        </script> 
 
 
 
