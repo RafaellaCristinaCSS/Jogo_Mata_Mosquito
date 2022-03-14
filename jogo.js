@@ -1,6 +1,6 @@
 var altura = 0
 var largura = 0
-
+var vidas = 1
 function ajustaTamanhoPalcoJogo(){
     altura = window.innerHeight
     largura = window.innerWidth
@@ -13,7 +13,16 @@ function posicaoRandomica(){
    /* Caso ja exista um mosquito criado ira remove-lo, se nao dar procedimento a funcao */
    if(document.getElementById('mosquito')){
        document.getElementById('mosquito').remove()
+        if(vidas > 3){
+            alert('Game Over')
+        }else{
+            document.getElementById('v' + vidas).src="imagens/coracao_vazio.png"
+            vidas++
+        }
+      
     }
+
+
     var posicaoX = Math.floor(Math.random() * largura) - 90 /* Ou seja, essa variavel pegara um valor aleatorio entre 0 e o total da largura do browser do usuario (O -90 foi adicionado para manter uma distancia do final da tela) */
                                         /* O metodo floor sera ultilizado para arredondar para baixo os valores obtidos e transformando em inteiros */
     var posicaoY = Math.floor(Math.random() * altura) - 90 /* Ou seja, essa variavel pegara um valor aleatorio entre 0 e o total da Altura do browser do usuario (O -90 foi adicionado para manter uma distancia do final da tela)*/
@@ -33,6 +42,9 @@ function posicaoRandomica(){
         mosquito.style.top = posicaoY + 'px'
         mosquito.style.position = 'absolute'
         mosquito.id ='mosquito'
+        mosquito.onclick = function(){
+            this.remove() /* Ou seja, ele removera o elemento que estamos trabalhando, no caso o mosquito */
+        }
 
         document.body.appendChild(mosquito)
       
