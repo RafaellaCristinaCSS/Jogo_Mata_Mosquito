@@ -2,6 +2,16 @@ var altura = 0
 var largura = 0
 var vidas = 1
 var tempo = 10
+var criaMosquitoTempo = 1500
+var nivel = window.location.search /* O metodo search retorna tudo que esta apos o ? da URL */
+nivel = nivel.replace('?', '') /* O replace esta sendo ultilizado para tirar o ? que vira da URL e subistitui-lo por '' */
+if(nivel === 'normal'){
+    criaMosquitoTempo = 1500
+}else if(nivel === 'dificil'){
+    criaMosquitoTempo = 1000
+}else if(nivel === 'chucknorris'){
+    criaMosquitoTempo = 750
+}
 
 function ajustaTamanhoPalcoJogo(){
     altura = window.innerHeight
