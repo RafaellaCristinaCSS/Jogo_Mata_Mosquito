@@ -10,3 +10,10 @@
     width: 90px;
     height: 90px;
 }
+/* Invertendo da lado da imagem */
+.ladoA{
+    transform: scale(1);
+}
+.ladoB{
+    transform: scale(-1);
+}
