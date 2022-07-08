@@ -6,7 +6,7 @@ var criaMosquitoTempo = 1500
 var nivel = window.location.search /* O metodo search retorna tudo que esta apos o ? da URL */
 nivel = nivel.replace('?', '') /* O replace esta sendo ultilizado para tirar o ? que vira da URL e subistitui-lo por '' */
 if(nivel === 'normal'){
-    criaMosquitoTempo = 1500
+    criaMosquitoTempo = 1800
 }else if(nivel === 'dificil'){
     criaMosquitoTempo = 1000
 }else if(nivel === 'chucknorris'){
